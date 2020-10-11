@@ -11,4 +11,5 @@ public class signup_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_details);
     }
+
 }

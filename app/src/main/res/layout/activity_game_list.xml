@@ -53,14 +53,24 @@
         app:layout_constraintVertical_bias="0.159" />
 
     <ListView
-        android:layout_width="451dp"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ListView"
+        android:layout_width="390dp"
+        android:layout_height="560dp"
+        android:cacheColorHint="#40FFFFFF"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="10dp"
+        android:smoothScrollbar="true"
+        android:soundEffectsEnabled="true"
+        android:textAlignment="inherit"
+        android:verticalScrollbarPosition="left"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/listView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:listfooter="@android:layout/expandable_list_content" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
