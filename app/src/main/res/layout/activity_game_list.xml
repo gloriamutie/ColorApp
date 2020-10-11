@@ -8,38 +8,38 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="415dp"
-        android:layout_height="801dp"
+        android:layout_width="537dp"
+        android:layout_height="819dp"
         android:scaleType="fitXY"
         app:layout_constraintBaseline_toBaselineOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/items" />
+        app:srcCompat="@drawable/gamelist" />
 
     <TextView
         android:id="@+id/textView3"
         style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="251dp"
-        android:layout_height="63dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="#E91E63"
         android:backgroundTint="#E91E63"
         android:cursorVisible="true"
         android:fontFamily="monospace"
-        android:lineSpacingExtra="8sp"
+        android:lineSpacingExtra="10sp"
         android:text="Available Games, choose one to play."
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#009688"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <ListView
         android:id="@+id/listView"
@@ -47,9 +47,20 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.366"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.159" />
+
+    <ListView
+        android:layout_width="451dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/listView"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

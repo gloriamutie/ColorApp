@@ -5,37 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scaleType="center"
+    android:src="@drawable/trym"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/Go"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="103dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="112dp"
         android:fontFamily="monospace"
         android:text="GO!"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.96" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="561dp"
-        android:layout_height="841dp"
+        android:id="@+id/imageView6"
+        android:layout_width="422dp"
+        android:layout_height="734dp"
+        android:layout_marginStart="4dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBaseline_toBaselineOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333"
-        app:srcCompat="@drawable/main" />
+        app:srcCompat="@drawable/boxes" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
