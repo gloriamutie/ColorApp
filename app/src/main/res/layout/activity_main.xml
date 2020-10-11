@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Go"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="103dp"
         android:layout_height="61dp"
         android:fontFamily="monospace"
-        android:text="START"
+        android:text="GO!"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/colorPrimaryDark"
