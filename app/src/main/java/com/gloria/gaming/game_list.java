@@ -14,11 +14,19 @@ public class game_list extends AppCompatActivity {
     //private ListView mListView;
     @BindView(R.id.listView) ListView mListView;
 
-    private String[] gamelist = new String[] {"Mi Mero Mole", "Mother's Bistro",
-            "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
-            "Slappy Cakes", "Equinox", "Miss Delta's", "Andina",
-            "Lardo", "Portland City Grill", "Fat Head's Brewery",
-            "Chipotle", "Subway"};
+    private String[] gamelist = new String[] {
+            "Shapes and colors",
+            "colors for kids,toddlers,babies",
+            "baby puzzles & toddlers games ",
+            "Monster truck games for kids2",
+            "Baby Games",
+            "Animal Farm for kids",
+            "Fun Kids Cars",
+            "Barnyard games for kids",
+            "Fishing for kids",
+            "123 numbers"
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
