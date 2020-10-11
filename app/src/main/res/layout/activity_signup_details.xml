@@ -22,6 +22,7 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="326dp"
         android:layout_height="37dp"
+        android:layout_marginTop="196dp"
         android:background="#9CFFFFFF"
         android:ems="10"
         android:hint="Email"
@@ -34,29 +35,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="UnknownId"
-        tools:layout_editor_absoluteY="197dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="326dp"
         android:layout_height="37dp"
+        android:layout_marginTop="81dp"
         android:background="#75FFFFFF"
         android:ems="10"
-        android:hint="Bassword"
+        android:hint="Password"
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="266dp" />
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="326dp"
         android:layout_height="35dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:background="#70FFFFFF"
         android:ems="10"
         android:foregroundTint="#E40B0B"
@@ -68,14 +70,16 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/createaccount"
         android:layout_width="231dp"
         android:layout_height="55dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginBottom="244dp"
         android:background="#8AFFFFFF"
         android:clickable="true"
         android:fontFamily="monospace"
@@ -84,8 +88,9 @@
         android:textColor="#050505"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="453dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
