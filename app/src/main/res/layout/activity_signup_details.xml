@@ -20,41 +20,72 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
+        android:layout_width="326dp"
+        android:layout_height="37dp"
+        android:background="#9CFFFFFF"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="#050505"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        tools:ignore="UnknownId"
+        tools:layout_editor_absoluteY="197dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="326dp"
+        android:layout_height="37dp"
+        android:background="#75FFFFFF"
         android:ems="10"
         android:hint="Bassword"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        tools:layout_editor_absoluteY="266dp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="326dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="44dp"
+        android:background="#70FFFFFF"
         android:ems="10"
+        android:foregroundTint="#E40B0B"
         android:hint="Confirm Password"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#050505"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="231dp"
+        android:layout_height="55dp"
+        android:background="#8AFFFFFF"
+        android:clickable="true"
+        android:fontFamily="monospace"
+        android:text="create account"
+        android:textAlignment="center"
+        android:textColor="#050505"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="453dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
