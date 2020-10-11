@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".game_list">
+    tools:context=".game_list"
+    android:alpha="0.87"
+    android:color="?attr/colorOnSurface">
+
+
 
     <ImageView
         android:id="@+id/imageView5"
@@ -45,6 +49,8 @@
         android:id="@+id/listView"
         android:layout_width="302dp"
         android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:keepScreenOn="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.366"

@@ -10,16 +10,18 @@
 
     <Button
         android:id="@+id/Go"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="112dp"
+        android:background="#9EFFFFFF"
         android:fontFamily="monospace"
         android:text="GO!"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#DA0CAD"
         android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
@@ -29,11 +31,11 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="422dp"
-        android:layout_height="734dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="513dp"
+        android:layout_height="860dp"
         android:scaleType="fitXY"
         app:layout_constraintBaseline_toBaselineOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/boxes" />
 
