@@ -49,7 +49,7 @@
         android:text="BABY GAMES"
         android:textAlignment="center"
         android:textColor="#FD0808"
-        android:textSize="40sp"
+        android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
