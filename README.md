@@ -1,10 +1,10 @@
-## BOOKHUB
+## colorapp
 ````bash
 An application for parents,teachers and children for learning. It aims at teaching kids colors and shapes in an interactive manner where kids through playing games
 ````
 ## SCREENSHOT
 
-![](mainactivity.jpg)
+![](![](src/main/res/drawable/mainactivity.jpg)
 
 ## AUTHOR
 ````bash
