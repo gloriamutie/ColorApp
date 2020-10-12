@@ -2,9 +2,7 @@
 ````bash
 An application for parents,teachers and children for learning. It aims at teaching kids colors and shapes in an interactive manner where kids through playing games
 ````
-## SCREENSHOT
-````bash
-![](drawable/mainactivity.jpg)
+
 ## AUTHOR
 ````bash
 Gloria Mutie
