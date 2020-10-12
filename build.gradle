@@ -3,6 +3,10 @@ buildscript {
     repositories {
         google()
         jcenter()
+
+//Note: if you are planning to use the google() , you need Gradle 4.x+, Android Studio 3.x+ and Gradle plugin for Android 3.x+.
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.2'
