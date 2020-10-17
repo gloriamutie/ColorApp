@@ -26,6 +26,11 @@ android {
 
     }
 
+    buildTypes.each {
+        it.buildConfigField 'String', 'YOUTUBE_API_KEY', YoutubeApiKey
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -42,12 +47,16 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
