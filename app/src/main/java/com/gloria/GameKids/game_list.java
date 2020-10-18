@@ -5,15 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-import com.gloria.GameKids.models.Item;
-
-import java.util.List;
+import com.gloria.GameKids.models.YoutubeGameSearchResponse;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class game_list extends AppCompatActivity {
     //private ListView mListView;
@@ -45,7 +41,7 @@ public class game_list extends AppCompatActivity {
 
         YoutubeApi client = YoutubeClient.getClient();
 
-        Call<com.gloria.GameKids.YoutubeGameSearchResponse> call = client.getPlaylists("part","key","channelId");
+        Call<YoutubeGameSearchResponse> call = client.getPlaylists("part","key","channelId","pageToken");
 
     }
 }

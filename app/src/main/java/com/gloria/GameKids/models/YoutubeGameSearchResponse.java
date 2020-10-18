@@ -1,9 +1,7 @@
 
-package com.gloria.GameKids;
+package com.gloria.GameKids.models;
 
 import java.util.List;
-
-import com.gloria.GameKids.models.Item;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

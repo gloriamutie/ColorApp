@@ -17,7 +17,7 @@ public class Item {
     private String id;
     @SerializedName("snippet")
     @Expose
-    private com.gloria.GameKids.Snippet snippet;
+    private Snippet snippet;
 
     /**
      * No args constructor for use in serialization
@@ -33,7 +33,7 @@ public class Item {
      * @param etag
      * @param id
      */
-    public Item(String kind, String etag, String id, com.gloria.GameKids.Snippet snippet) {
+    public Item(String kind, String etag, String id, Snippet snippet) {
         super();
         this.kind = kind;
         this.etag = etag;
@@ -65,11 +65,11 @@ public class Item {
         this.id = id;
     }
 
-    public com.gloria.GameKids.Snippet getSnippet() {
+    public Snippet getSnippet() {
         return snippet;
     }
 
-    public void setSnippet(com.gloria.GameKids.Snippet snippet) {
+    public void setSnippet(Snippet snippet) {
         this.snippet = snippet;
     }
 
