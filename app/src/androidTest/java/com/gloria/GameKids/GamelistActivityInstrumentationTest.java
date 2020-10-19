@@ -24,8 +24,8 @@ import static org.hamcrest.core.IsNot.not;
 @RunWith(AndroidJUnit4.class)
 public class GamelistActivityInstrumentationTest {
     @Rule
-    public ActivityTestRule<game_list> activityTestRule =
-            new ActivityTestRule<>(game_list.class);
+    public ActivityTestRule<play_list> activityTestRule =
+            new ActivityTestRule<>(play_list.class);
 
     @Test
     public void listItemClickDisplaysToastWithCorrectGame() {

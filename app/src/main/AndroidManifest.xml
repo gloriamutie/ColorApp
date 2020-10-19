@@ -20,7 +20,7 @@
         <activity android:name=".BabyVideos">
 
         </activity>
-        <activity android:name=".game_list" />
+        <activity android:name=".play_list" />
         <activity android:name=".signup_details" />
         <activity android:name=".login_details" />
         <activity android:name=".Login" />

@@ -20,7 +20,7 @@ public class login_details extends AppCompatActivity {
         mGames.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(login_details.this, game_list.class);
+                Intent intent = new Intent(login_details.this, play_list.class);
                 startActivity(intent);
                 Toast.makeText(login_details.this, "Yaaaaay game time!!! ", Toast.LENGTH_LONG).show();
 

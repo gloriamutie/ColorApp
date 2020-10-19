@@ -3,11 +3,11 @@ package com.gloria.GameKids;
 import android.content.Context;
 import android.widget.ArrayAdapter;
 
-public class MyGamesAdapter extends ArrayAdapter {
+public class MyPlayListAdapter extends ArrayAdapter {
     private Context mContext;
     private String[] mgamelist;
 
-    public MyGamesAdapter(Context mcontext, int resource, String[] mgamelist) {
+    public MyPlayListAdapter(Context mcontext, int resource, String[] mgamelist) {
         super(mcontext, resource);
         this.mContext=mcontext;
         this.mgamelist = mgamelist;
