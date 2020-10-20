@@ -9,12 +9,11 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface YoutubeApi {
-    @GET("playlists")
-    Call<YoutubeGameSearchResponse> getPlaylists(
+    @GET("playlistItems")
+    Call<Playlistnew.YoutubeGameSearchResponse> getPlaylists(
             @Query("part") String part,
-            @Query("key") String key,
-            @Query("playlistId") String playlistId
-
+            @Query("playlistId") String playlistId,
+            @Query("key") String key
     );
 
 }

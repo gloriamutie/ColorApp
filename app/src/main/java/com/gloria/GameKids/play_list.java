@@ -11,9 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.gloria.GameKids.models.Item;
-import com.gloria.GameKids.models.YoutubeGameSearchResponse;
 
+import com.gloria.GameKids.models.Playlistnew;
 
 import java.util.List;
 
@@ -26,6 +25,7 @@ import retrofit2.Response;
 public class play_list extends AppCompatActivity {
     //private ListView mListView;
     @BindView(R.id.listView) ListView mListView;
+
 
 //    private String[] gamelist = new String[] {
 //            "Shapes and colors",
@@ -46,41 +46,41 @@ public class play_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
         ButterKnife.bind(this);
-        mListView = (ListView) findViewById(R.id.listView);
+//     mListView = (ListView) findViewById(R.id.listView);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, gamelist);
 //        MyPlayListAdapter adapter = new MyPlayListAdapter(this, android.R.layout.simple_list_item_1, ); // must match constructor!
 //        mListView.setAdapter(adapter);
         Intent intent = getIntent();
-        String playlists = intent.getStringExtra("playlists");
+        String playlists = intent.getStringExtra("");
 
         YoutubeApi client = YoutubeClient.getClient();
-        Call<YoutubeGameSearchResponse> call = client.getPlaylists("snippet","AIzaSyBAKsoD-SGXJI3xjs4G7EUFNcPc3gdsdVo","PLsp5EQ9nGkPnHLgg804LVAh8sSFAI9pM7");
-        call.enqueue(new Callback<YoutubeGameSearchResponse>(){
+        Call<Playlistnew.YoutubeGameSearchResponse> call = client.getPlaylists("snippet","PLsp5EQ9nGkPnHLgg804LVAh8sSFAI9pM7","AIzaSyBAKsoD-SGXJI3xjs4G7EUFNcPc3gdsdVo");
+        call.enqueue(new Callback<Playlistnew.YoutubeGameSearchResponse>(){
 
             @Override
-            public void onResponse(Call<YoutubeGameSearchResponse> call, Response<YoutubeGameSearchResponse> response) {
+            public void onResponse(Call<Playlistnew.YoutubeGameSearchResponse> call, Response<Playlistnew.YoutubeGameSearchResponse> response) {
                 if (response.isSuccessful()) {
-                    List<Item> itemList = response.body().getItems();
+                    Playlistnew.YoutubeGameSearchResponse testresponse= response.body();
+                    Log.i("Response Body",response.message());
+//
+                    List<Playlistnew.Item> itemList = response.body().getItems();
                     String[] items = new String[itemList.size()];
 
 
                     for (int i = 0; i < items.length; i++){
-                        items[i] = itemList.get(i).getId();
+                        items[i] = itemList.get(i).getSnippet().getTitle();
                     }
 
-
-                    ArrayAdapter adapter = new MyPlayListAdapter(play_list.this, android.R.layout.simple_list_item_1, items);
+                    MyPlayListAdapter adapter = new MyPlayListAdapter(play_list.this.getApplicationContext(), itemList);
                     mListView.setAdapter(adapter);
 
                 }
 
             }
-
             @Override
-            public void onFailure(Call<YoutubeGameSearchResponse> call, Throwable t) {
+            public void onFailure(Call<Playlistnew.YoutubeGameSearchResponse> call, Throwable t) {
                 Toast.makeText(play_list.this,t.getMessage(),Toast.LENGTH_LONG).show();
 //                Log.e(TAG.concat("API REQUEST FAILED"),t.getMessage());
-
             }
 
 

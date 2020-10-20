@@ -688,8 +688,6 @@ public class Playlistnew {
     }
 
 
-
-
     public class YoutubeGameSearchResponse {
 
         @SerializedName("kind")
