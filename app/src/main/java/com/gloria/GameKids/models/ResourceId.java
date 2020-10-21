@@ -1,9 +1,12 @@
 
 package com.gloria.GameKids.models;
 
+import org.parceler.Parcel;
+
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+@Parcel
 public class ResourceId {
 
     @SerializedName("kind")

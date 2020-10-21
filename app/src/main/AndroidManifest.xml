@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".ui.Vedios"></activity>
+        <activity android:name=".ui.DetailsActivity"></activity>
+        <activity android:name=".ui.Vedios" />
         <activity android:name=".ui.vedios" />
         <activity android:name=".BabyVideos" />
         <activity android:name=".ui.play_list" />

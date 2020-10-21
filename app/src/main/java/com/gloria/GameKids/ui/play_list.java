@@ -1,14 +1,13 @@
 package com.gloria.GameKids.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +15,8 @@ import android.widget.Toast;
 
 import com.gloria.GameKids.adapters.MyPlayListAdapter;
 import com.gloria.GameKids.R;
-import com.gloria.GameKids.models.Playlistnew;
+import com.gloria.GameKids.models.Item;
+import com.gloria.GameKids.models.YoutubeGameSearchResponse;
 import com.gloria.GameKids.network.YoutubeApi;
 import com.gloria.GameKids.network.YoutubeClient;
 
@@ -31,11 +31,9 @@ import retrofit2.Response;
 public class play_list extends AppCompatActivity {
     public static final String TAG= play_list.class.getSimpleName();
 //    private ListView mListView;
-    @BindView(R.id.listView) ListView mListView;
-//    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-//    private MyPlayListAdapter mAdapter;
-
-
+//    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    private MyPlayListAdapter mAdapter;
 //    private String[] gamelist = new String[] {
 //            "Shapes and colors",
 //            "colors for kids,toddlers,babies",
@@ -60,37 +58,51 @@ public class play_list extends AppCompatActivity {
 //        MyPlayListAdapter adapter = new MyPlayListAdapter(this, android.R.layout.simple_list_item_1, ); // must match constructor!
 //        mListView.setAdapter(adapter);
         Intent intent = getIntent();
-        String playlists = intent.getStringExtra("");
+        String part= intent.getStringExtra("part");
 
         YoutubeApi client = YoutubeClient.getClient();
-        Call<Playlistnew.YoutubeGameSearchResponse> call = client.getPlaylists("snippet","PLsp5EQ9nGkPnHLgg804LVAh8sSFAI9pM7","AIzaSyBAKsoD-SGXJI3xjs4G7EUFNcPc3gdsdVo");
-        call.enqueue(new Callback<Playlistnew.YoutubeGameSearchResponse>(){
+        Call<YoutubeGameSearchResponse> call = client.getPlaylists("snippet","PLsp5EQ9nGkPnHLgg804LVAh8sSFAI9pM7","AIzaSyBAKsoD-SGXJI3xjs4G7EUFNcPc3gdsdVo");
+
+        call.enqueue(new Callback<YoutubeGameSearchResponse>(){
 
             @Override
-            public void onResponse(Call<Playlistnew.YoutubeGameSearchResponse> call, Response<Playlistnew.YoutubeGameSearchResponse> response) {
+            public void onResponse(Call<YoutubeGameSearchResponse> call, Response<YoutubeGameSearchResponse> response) {
+                hideProgressBar();
+
                 if (response.isSuccessful()) {
-                    Playlistnew.YoutubeGameSearchResponse testresponse= response.body();
-                    Log.i("Response Body",response.message());
-//
-                    List<Playlistnew.Item> itemList = response.body().getItems();
-                    String[] items = new String[itemList.size()];
-
-
-                    for (int i = 0; i < items.length; i++){
-                        items[i] = itemList.get(i).getSnippet().getTitle();
-                    }
-
-                    MyPlayListAdapter adapter = new MyPlayListAdapter(play_list.this.getApplicationContext(), itemList);
-                    mListView.setAdapter(adapter);
-
+                    List<Item> itemList = response.body().getItems();
+                    mAdapter = new MyPlayListAdapter(play_list.this, itemList);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(play_list.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
                     showitemList();
-                } else {
+                }else {
                     showUnsuccessfulMessage();
                 }
+                    YoutubeGameSearchResponse testresponse= response.body();
+                    Log.i("Response Body",response.message());
+//
+////                    List<Playlistnew.Item> itemList = response.body().getItems();
+//                    String[] items = new String[itemList.size()];
+//
+//
+//                    for (int i = 0; i < items.length; i++){
+//                        items[i] = itemList.get(i).getSnippet().getTitle();
+//                    }
+//
+//
+//                    showitemList();
+//                } else {
+//                    showUnsuccessfulMessage();
+//                }
 
             }
+
+
+
             @Override
-            public void onFailure(Call<Playlistnew.YoutubeGameSearchResponse> call, Throwable t) {
+            public void onFailure(Call<YoutubeGameSearchResponse> call, Throwable t) {
                 Toast.makeText(play_list.this,t.getMessage(),Toast.LENGTH_LONG).show();
              Log.e(TAG, "onFailure: ",t);
                 hideProgressBar();
@@ -103,6 +115,7 @@ public class play_list extends AppCompatActivity {
 }
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
+
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
         mErrorTextView.setVisibility(View.VISIBLE);
@@ -114,7 +127,7 @@ public class play_list extends AppCompatActivity {
     }
 
     private void showitemList() {
-        mListView.setVisibility(View.VISIBLE);
+       mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {

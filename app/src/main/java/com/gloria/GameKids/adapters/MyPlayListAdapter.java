@@ -1,12 +1,9 @@
 package com.gloria.GameKids.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.gloria.GameKids.R;
 import com.gloria.GameKids.models.Item;
-import com.gloria.GameKids.models.Playlistnew;
-import com.google.api.services.youtube.YouTube;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -27,9 +23,9 @@ import butterknife.ButterKnife;
 public class MyPlayListAdapter  extends RecyclerView.Adapter<MyPlayListAdapter.PlaylistViewHolder> {
 
     private Context mContext;
-    List<Playlistnew.Item> mitemList;
+    List<Item> mitemList;
 
-    public MyPlayListAdapter(Context mcontext, List<Playlistnew.Item> mitemList) {
+    public MyPlayListAdapter(Context mcontext, List<Item> mitemList) {
         this.mContext=mcontext;
         this.mitemList = mitemList;
     }
@@ -37,17 +33,19 @@ public class MyPlayListAdapter  extends RecyclerView.Adapter<MyPlayListAdapter.P
     @NonNull
     @Override
     public PlaylistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+       View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_baby_videos,parent,false);
+       PlaylistViewHolder viewHolder=new PlaylistViewHolder(v);
+       return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull PlaylistViewHolder holder, int position) {
-
+       holder.bindPlaylist(mitemList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mitemList.size();
     }
 
     public class PlaylistViewHolder extends RecyclerView.ViewHolder {
@@ -58,14 +56,16 @@ public class MyPlayListAdapter  extends RecyclerView.Adapter<MyPlayListAdapter.P
 
         private Context mContext;
 
-        public PlaylistViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-            mContext = itemView.getContext();
+        public PlaylistViewHolder(View v) {
+            super(v);
+            ButterKnife.bind(this, v);
+            mContext = v.getContext();
         }
 
-        public void bindplay_list(Item items) {
+        public void bindPlaylist(Item items) {
+            Picasso.get().load(items.getSnippet().getThumbnails());
             mGameNameTextView.setText(items.getSnippet().getTitle());
+            mGameNameTextView2.setText(items.getSnippet().getDescription());
 //            mCategoryTextView.setText(restaurant.getCategories().get(0).getTitle());
 //            mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
         }

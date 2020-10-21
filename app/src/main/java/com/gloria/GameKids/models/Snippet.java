@@ -1,9 +1,14 @@
 
 package com.gloria.GameKids.models;
 
+import android.net.Uri;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Snippet {
 
     @SerializedName("publishedAt")
@@ -98,7 +103,7 @@ public class Snippet {
         this.description = description;
     }
 
-    public Thumbnails getThumbnails() {
+    public Uri getThumbnails() {
         return thumbnails;
     }
 

@@ -49,6 +49,7 @@ android {
 dependencies {
 
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
 //    compile 'com.daimajia.slider:library:1.1.5@aar'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
@@ -73,6 +74,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'pub.devrel:easypermissions:0.3.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
 
 //    implementation('com.google.api-client:google-api-client-android:1.22.0') {
 //        exclude group: 'org.apache.httpcomponents'
