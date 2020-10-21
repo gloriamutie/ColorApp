@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:scaleType="center"
     android:src="@drawable/trym"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <Button
         android:id="@+id/Go"

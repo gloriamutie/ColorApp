@@ -1,18 +1,24 @@
-package com.gloria.GameKids;
-
-
+package com.gloria.GameKids.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.gloria.GameKids.adapters.MyPlayListAdapter;
+import com.gloria.GameKids.R;
 import com.gloria.GameKids.models.Playlistnew;
+import com.gloria.GameKids.network.YoutubeApi;
+import com.gloria.GameKids.network.YoutubeClient;
 
 import java.util.List;
 
@@ -23,8 +29,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class play_list extends AppCompatActivity {
-    //private ListView mListView;
+    public static final String TAG= play_list.class.getSimpleName();
+//    private ListView mListView;
     @BindView(R.id.listView) ListView mListView;
+//    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+//    private MyPlayListAdapter mAdapter;
 
 
 //    private String[] gamelist = new String[] {
@@ -74,18 +83,43 @@ public class play_list extends AppCompatActivity {
                     MyPlayListAdapter adapter = new MyPlayListAdapter(play_list.this.getApplicationContext(), itemList);
                     mListView.setAdapter(adapter);
 
+                    showitemList();
+                } else {
+                    showUnsuccessfulMessage();
                 }
 
             }
             @Override
             public void onFailure(Call<Playlistnew.YoutubeGameSearchResponse> call, Throwable t) {
                 Toast.makeText(play_list.this,t.getMessage(),Toast.LENGTH_LONG).show();
-//                Log.e(TAG.concat("API REQUEST FAILED"),t.getMessage());
+             Log.e(TAG, "onFailure: ",t);
+                hideProgressBar();
+                showFailureMessage();
             }
 
 
 });
 
 }
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    private void showFailureMessage() {
+        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showUnsuccessfulMessage() {
+        mErrorTextView.setText("Something went wrong. Please try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showitemList() {
+        mListView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
 
 }

@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.gloria.GameKids">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -17,14 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".BabyVideos">
-
-        </activity>
-        <activity android:name=".play_list" />
-        <activity android:name=".signup_details" />
-        <activity android:name=".login_details" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.Vedios"></activity>
+        <activity android:name=".ui.vedios" />
+        <activity android:name=".BabyVideos" />
+        <activity android:name=".ui.play_list" />
+        <activity android:name=".ui.signup_details" />
+        <activity android:name=".ui.login_details" />
+        <activity android:name=".ui.Login" />
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,16 +1,12 @@
-package com.gloria.GameKids;
+package com.gloria.GameKids.network;
 
-import java.io.IOException;
+import com.gloria.GameKids.network.YoutubeApi;
 
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.gloria.GameKids.Constants.YOUTUBE_API_KEY;
 import static com.gloria.GameKids.Constants.YOUTUBE_BASE_URL;
 
 public class YoutubeClient {

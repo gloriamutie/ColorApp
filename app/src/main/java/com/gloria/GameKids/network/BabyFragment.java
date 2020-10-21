@@ -1,4 +1,4 @@
-package com.gloria.GameKids;
+package com.gloria.GameKids.network;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.gloria.GameKids.R;
 
 /**
  * A simple {@link Fragment} subclass.

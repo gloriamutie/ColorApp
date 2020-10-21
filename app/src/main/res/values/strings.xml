@@ -2,4 +2,6 @@
     <string name="app_name">Gaming</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vedios_to_watch">Vedios to watch</string>
+    <string name="vdio_description">vdio description</string>
 </resources>

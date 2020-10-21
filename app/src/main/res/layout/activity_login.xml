@@ -12,7 +12,7 @@
     android:layout_alignParentBottom="true"
     android:filterTouchesWhenObscured="true"
     app:flow_horizontalAlign="start"
-    tools:context=".Login">
+    tools:context=".ui.Login">
 
     <ImageView
         android:id="@+id/imageView3"

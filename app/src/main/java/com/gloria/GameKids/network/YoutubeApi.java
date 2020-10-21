@@ -1,4 +1,4 @@
-package com.gloria.GameKids;
+package com.gloria.GameKids.network;
 
 import com.gloria.GameKids.models.Playlistnew;
 import com.gloria.GameKids.models.YoutubeGameSearchResponse;

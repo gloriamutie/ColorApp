@@ -1,4 +1,4 @@
-package com.gloria.GameKids;
+package com.gloria.GameKids.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.gloria.GameKids.R;
 
 public class Login extends AppCompatActivity {
     private Button mSignup;

@@ -49,7 +49,8 @@ android {
 dependencies {
 
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
-    compile 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+//    compile 'com.daimajia.slider:library:1.1.5@aar'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -58,6 +59,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation files('/home/gloria/AndroidStudioProjects/Gaming/app/libs/YouTubeAndroidPlayerApi.jar')
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
