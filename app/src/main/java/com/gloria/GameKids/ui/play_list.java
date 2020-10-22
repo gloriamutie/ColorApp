@@ -103,8 +103,6 @@ public class play_list extends AppCompatActivity {
 
             }
 
-
-
             @Override
             public void onFailure(Call<YoutubeGameSearchResponse> call, Throwable t) {
                 Toast.makeText(play_list.this,t.getMessage(),Toast.LENGTH_LONG).show();

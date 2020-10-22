@@ -2,6 +2,7 @@ package com.gloria.GameKids.ui;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.os.Parcelable;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 
 import com.gloria.GameKids.R;
 import com.gloria.GameKids.models.Item;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -29,9 +33,10 @@ import butterknife.ButterKnife;
  * create an instance of this fragment.
  */
 public class DetailsFragment extends Fragment {
-    @BindView(R.id.myImageView) ImageView mMyImageView;
+    @BindView(R.id.youtube_player_view)
+    YouTubePlayerView youTubePlayerView;
     @BindView(R.id.gameNameTextView) TextView mGameNameTextView;
-    @BindView(R.id.gameNameTextView2) TextView mGameNameTextView2;
+    @BindView(R.id.vediodescription) TextView mGameNameTextView2;
     @BindView(R.id.ratingTextView) TextView mRatingTextView;
 
     private Item mitems;
@@ -56,15 +61,20 @@ public class DetailsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_details,container,false);
+        View view = inflater.inflate(R.layout.fragment_details,container,false);
         ButterKnife.bind(this, view);
 //put categories here
-        Picasso.get().load(mitems.getSnippet().getThumbnails().getDefault().getUrl()).into(mMyImageView);
+//        Picasso.get().load(mitems.getSnippet().getThumbnails().getDefault().getUrl()).into(mMyImageView);
 
         mGameNameTextView.setText(mitems.getSnippet().getTitle());
         mGameNameTextView2.setText(mitems.getSnippet().getDescription());
+        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            @Override
+            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
 
-
+                youTubePlayer.loadVideo(mitems.getSnippet().getResourceId().getVideoId(), 0);
+            }
+        });
         return view;
     }
 }

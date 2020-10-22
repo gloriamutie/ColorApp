@@ -25,16 +25,11 @@ public class YoutubeClient {
     public static YoutubeApi getClient() {
 
         if (retrofit == null) {
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                    .addInterceptor(new Interceptor() {
-                        @Override
-                        public Response intercept(Chain chain) throws IOException {
-                            Request request = chain.request().newBuilder()
-                                    .build();
-                            return chain.proceed(request);
-                        }
-                    })
-                    .build();
+                    .addInterceptor(interceptor)
+                 .build();
 
             retrofit = new Retrofit.Builder()
                     .baseUrl(YOUTUBE_BASE_URL)

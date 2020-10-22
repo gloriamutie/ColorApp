@@ -76,6 +76,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.23'
 
 //    implementation('com.google.api-client:google-api-client-android:1.22.0') {
 //        exclude group: 'org.apache.httpcomponents'

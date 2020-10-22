@@ -5,61 +5,60 @@
     android:layout_height="match_parent"
     tools:context=".ui.DetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
-        <ImageView
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:id="@+id/restaurantImageView"
-            android:src="@drawable/gamelist"
-            android:scaleType="centerCrop" />
+            android:layout_height="180dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/white"
-            android:paddingTop="20dp"
             android:paddingLeft="10dp"
+            android:paddingTop="20dp"
             android:paddingRight="10dp"
             android:paddingBottom="20dp">
 
             <TextView
+                android:id="@+id/gameNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Restaurant Name"
-                android:id="@+id/restaurantNameTextView"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="20sp"
+                android:layout_alignParentLeft="true"
+                android:text="Vedio Name"
                 android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:maxLength="200"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/ratingTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.5/5"
-                android:id="@+id/ratingTextView"
-                android:layout_alignTop="@+id/restaurantNameTextView"
-                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/gameNameTextView"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="4.5/5"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/cuisineTextView"
+                android:id="@+id/vediodescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/restaurantNameTextView"
+                android:layout_below="@+id/gameNameTextView"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:text="Brunch, American"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="italic" />
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -67,13 +66,12 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveRestaurantButton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
@@ -116,18 +114,16 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
+                <Button
+                    android:id="@+id/saveVediosButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorAccent"
+                    android:text="Save Videos"
+                    android:textColor="@color/common_google_signin_btn_text_light_focused"
+                    android:textSize="15sp" />
             </LinearLayout>
-
-            <Button
-                android:id="@+id/saveRestaurantButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorAccent"
-                android:text="Save Restaurant"
-                android:textColor="@color/common_google_signin_btn_text_light_focused"
-                android:textSize="15sp" />
         </RelativeLayout>
     </LinearLayout>
-
 </FrameLayout>

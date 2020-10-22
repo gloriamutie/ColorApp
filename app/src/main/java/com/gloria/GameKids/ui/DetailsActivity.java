@@ -33,7 +33,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         int startingPosition = getIntent().getIntExtra("position",0);
         adapterViewPager = new PlaylistPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,mitemlist);
-mViewPager.setAdapter(adapterViewPager);
-mViewPager.setCurrentItem(startingPosition);
+        mViewPager.setAdapter(adapterViewPager);
+        mViewPager.setCurrentItem(startingPosition);
     }
 }
