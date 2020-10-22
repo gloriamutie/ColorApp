@@ -51,14 +51,14 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/cuisineTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brunch, American"
-                android:id="@+id/cuisineTextView"
                 android:layout_below="@+id/restaurantNameTextView"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textColor="@color/colorSecondaryText"
+                android:layout_alignParentLeft="true"
+                android:text="Brunch, American"
+                android:textColor="@color/colorPrimary"
                 android:textStyle="italic" />
         </RelativeLayout>
 
@@ -87,7 +87,7 @@
                     android:drawablePadding="4dp"
                     android:gravity="center"
                     android:text="View on Yelp"
-                    android:textColor="@color/colorTextIcons"
+                    android:textColor="@color/design_default_color_on_secondary"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -99,34 +99,33 @@
                     android:drawableLeft="@android:drawable/ic_media_play"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="(503) 223-1282"
+                    android:text="replay"
                     android:textColor="@color/design_default_color_surface"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/addressTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_123_sw_best_ever_ave_portland_oregon_97222"
-                    android:drawableLeft="@drawable/ic_map_white_24dp"
-                    android:drawablePadding="4dp"
-                    android:id="@+id/addressTextView"
-                    android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"/>
+                    android:drawableLeft="@android:drawable/ic_media_ff"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <Button
+                android:id="@+id/saveRestaurantButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
-                android:id="@+id/saveRestaurantButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
-                android:textColor="@color/colorTextIcons"
+                android:text="Save Restaurant"
+                android:textColor="@color/common_google_signin_btn_text_light_focused"
                 android:textSize="15sp" />
         </RelativeLayout>
     </LinearLayout>

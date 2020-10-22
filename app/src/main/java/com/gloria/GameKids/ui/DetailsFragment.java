@@ -58,8 +58,8 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_details,container,false);
         ButterKnife.bind(this, view);
-
-        Picasso.get().load(mitems.getSnippet().getThumbnails()).into(mMyImageView);
+//put categories here
+        Picasso.get().load(mitems.getSnippet().getThumbnails().getDefault().getUrl()).into(mMyImageView);
 
         mGameNameTextView.setText(mitems.getSnippet().getTitle());
         mGameNameTextView2.setText(mitems.getSnippet().getDescription());
@@ -67,5 +67,4 @@ public class DetailsFragment extends Fragment {
 
         return view;
     }
-
 }

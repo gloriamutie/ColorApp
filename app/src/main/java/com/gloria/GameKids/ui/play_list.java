@@ -57,8 +57,8 @@ public class play_list extends AppCompatActivity {
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, gamelist);
 //        MyPlayListAdapter adapter = new MyPlayListAdapter(this, android.R.layout.simple_list_item_1, ); // must match constructor!
 //        mListView.setAdapter(adapter);
-        Intent intent = getIntent();
-        String part= intent.getStringExtra("part");
+//        Intent intent = getIntent();
+//        String part= intent.getStringExtra("part");
 
         YoutubeApi client = YoutubeClient.getClient();
         Call<YoutubeGameSearchResponse> call = client.getPlaylists("snippet","PLsp5EQ9nGkPnHLgg804LVAh8sSFAI9pM7","AIzaSyBAKsoD-SGXJI3xjs4G7EUFNcPc3gdsdVo");
@@ -71,17 +71,21 @@ public class play_list extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                     List<Item> itemList = response.body().getItems();
+
+                    Log.d("Response Body",itemList.toString());
+
                     mAdapter = new MyPlayListAdapter(play_list.this, itemList);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(play_list.this);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
                     showitemList();
+
                 }else {
                     showUnsuccessfulMessage();
                 }
-                    YoutubeGameSearchResponse testresponse= response.body();
-                    Log.i("Response Body",response.message());
+
+
 //
 ////                    List<Playlistnew.Item> itemList = response.body().getItems();
 //                    String[] items = new String[itemList.size()];

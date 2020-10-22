@@ -31,8 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/vdio_description"
-            android:id="@+id/categoryTextView"
-            android:layout_below="@+id/gameNameTextView2"
+            android:id="@+id/gameNameTextView2"
+            android:layout_below="@+id/gameNameTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>

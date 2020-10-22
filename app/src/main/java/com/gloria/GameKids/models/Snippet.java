@@ -1,8 +1,6 @@
 
 package com.gloria.GameKids.models;
 
-import android.net.Uri;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -103,7 +101,7 @@ public class Snippet {
         this.description = description;
     }
 
-    public Uri getThumbnails() {
+    public Thumbnails getThumbnails() {
         return thumbnails;
     }
 
