@@ -86,21 +86,6 @@ public class play_list extends AppCompatActivity {
                 }
 
 
-//
-////                    List<Playlistnew.Item> itemList = response.body().getItems();
-//                    String[] items = new String[itemList.size()];
-//
-//
-//                    for (int i = 0; i < items.length; i++){
-//                        items[i] = itemList.get(i).getSnippet().getTitle();
-//                    }
-//
-//
-//                    showitemList();
-//                } else {
-//                    showUnsuccessfulMessage();
-//                }
-
             }
 
             @Override

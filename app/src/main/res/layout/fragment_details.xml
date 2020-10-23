@@ -31,10 +31,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:text="Vedio Name"
+                android:maxLength="100"
+                android:text="Video Name"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-                android:maxLength="200"
                 android:textStyle="bold" />
 
             <TextView
@@ -55,6 +55,7 @@
                 android:layout_below="@+id/gameNameTextView"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
+                android:maxLength="200"
                 android:text="Brunch, American"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="italic" />
@@ -76,43 +77,43 @@
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
 
-                <TextView
-                    android:id="@+id/websiteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:drawableLeft="@android:drawable/ic_menu_slideshow"
-                    android:drawablePadding="4dp"
-                    android:gravity="center"
-                    android:text="View on Yelp"
-                    android:textColor="@color/design_default_color_on_secondary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/websiteTextView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:drawableLeft="@android:drawable/ic_menu_slideshow"-->
+<!--                    android:drawablePadding="4dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="View on Youtube"-->
+<!--                    android:textColor="@color/design_default_color_on_secondary"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/phoneTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawableLeft="@android:drawable/ic_media_play"
-                    android:drawablePadding="4dp"
-                    android:gravity="center"
-                    android:text="replay"
-                    android:textColor="@color/design_default_color_surface"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/phoneTextView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:drawableLeft="@android:drawable/ic_media_play"-->
+<!--                    android:drawablePadding="4dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="replay"-->
+<!--                    android:textColor="@color/design_default_color_surface"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/addressTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawableLeft="@android:drawable/ic_media_ff"
-                    android:drawablePadding="4dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:id="@+id/addressTextView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:drawableLeft="@android:drawable/ic_media_ff"-->
+<!--                    android:drawablePadding="4dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:textColor="@color/common_google_signin_btn_text_dark_pressed"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold" />-->
 
                 <Button
                     android:id="@+id/saveVediosButton"

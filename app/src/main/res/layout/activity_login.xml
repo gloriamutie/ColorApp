@@ -20,7 +20,7 @@
         android:layout_height="945dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/arrange" />
+        app:srcCompat="@drawable/landing2" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -47,7 +47,7 @@
         android:id="@+id/Signup"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="326dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:clickable="true"
         android:cursorVisible="true"
         android:duplicateParentState="true"
@@ -66,16 +66,16 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.46" />
 
     <Button
         android:id="@+id/Login"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="326dp"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:backgroundTintMode="src_over"
         android:clickable="true"
@@ -94,9 +94,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Signup"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintVertical_bias="0.059" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

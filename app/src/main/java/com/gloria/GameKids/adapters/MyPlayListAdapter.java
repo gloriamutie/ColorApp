@@ -82,7 +82,7 @@ public class MyPlayListAdapter  extends RecyclerView.Adapter<MyPlayListAdapter.P
 
         }
         public void bindPlaylist(Item items) {
-            Picasso.get().load(items.getSnippet().getThumbnails().getDefault().getUrl());
+            Picasso.get().load(items.getSnippet().getThumbnails().getDefault().getUrl()).into(mMyImageView);
             mGameNameTextView.setText(items.getSnippet().getTitle());
             mGameNameTextView2.setText(items.getSnippet().getDescription());
         }
