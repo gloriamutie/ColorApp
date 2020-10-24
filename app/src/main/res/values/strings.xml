@@ -5,4 +5,11 @@
     <string name="vedios_to_watch">Vedios to watch</string>
     <string name="vdio_description">vdio description</string>
     <string name="_123_sw_best_ever_ave_portland_oregon_97222">123 SW Best Ever Ave. Portland, Oregon, 97222</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="sign_in">sign_in</string>
+    <string name="create_account">create_account</string>
+    <string name="sign_out">sign_out</string>
+    <string name="verify_email">verify_email</string>
+    <string name="reload">reload</string>
 </resources>
