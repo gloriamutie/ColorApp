@@ -12,4 +12,12 @@
     <string name="sign_out">sign_out</string>
     <string name="verify_email">verify_email</string>
     <string name="reload">reload</string>
+    <string name="desc_firebase_lockup" />
+    <string name="signed_out">signed_out</string>
+    <string name="emailpassword_title_text" />
+    <string name="enroll_mfa">enroll_mfa</string>
+    <string name="unenroll_mfa">unenroll_mfa</string>
+    <string name="label_multi_factor">label_multi_factor</string>
+
+
 </resources>

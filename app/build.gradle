@@ -30,6 +30,9 @@ android {
         it.buildConfigField 'String', 'YOUTUBE_API_KEY', YoutubeApiKey
     }
 
+    buildFeatures {
+        viewBinding true
+    }
 
     buildTypes {
         release {
@@ -61,6 +64,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation files('/home/gloria/AndroidStudioProjects/Gaming/app/libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
