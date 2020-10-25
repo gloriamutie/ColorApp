@@ -23,7 +23,7 @@ import com.google.firebase.auth.PhoneMultiFactorInfo;
 
 import java.util.List;
 
-public class MultiFactorActivity extends AppCompatActivity implements View.OnClickListener {
+public class MultiFactorActivity extends BaseActivity implements View.OnClickListener {
 
     public static final int RESULT_NEEDS_MFA_SIGN_IN = 42;
     private static final String TAG = "MultiFactor";
@@ -162,7 +162,7 @@ public class MultiFactorActivity extends AppCompatActivity implements View.OnCli
                 mBinding.enrollMfa.setVisibility(View.GONE);
             }
         } else {
-            mBinding.status.setText(R.string.multi_factor_signed_out);
+            mBinding.status.setText(R.string.sign_out);
             mBinding.detail.setText(null);
             mBinding.mfaInfo.setText(null);
 

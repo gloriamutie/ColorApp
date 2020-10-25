@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuthMultiFactorException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class signup_details extends AppCompatActivity implements View.OnClickListener {
+public class signup_details extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "EmailPassword";
     private ActivitySignupDetailsBinding mBinding;
 

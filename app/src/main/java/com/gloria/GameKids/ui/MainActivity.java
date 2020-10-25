@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity{
         mGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Login.class);
+                Intent intent = new Intent(MainActivity.this, MultiFactorActivity.class);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this, "welcome", Toast.LENGTH_LONG).show();
             }
