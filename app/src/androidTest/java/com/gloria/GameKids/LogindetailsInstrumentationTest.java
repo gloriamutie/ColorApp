@@ -7,8 +7,6 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
-import com.gloria.GameKids.ui.Register;
-
 import org.junit.Rule;
 import org.junit.runner.RunWith;
 

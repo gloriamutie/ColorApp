@@ -3,7 +3,6 @@ package com.gloria.GameKids;
 import android.content.Intent;
 
 
-import com.gloria.GameKids.ui.Login;
 import com.gloria.GameKids.ui.MainActivity;
 
 import org.junit.Before;
