@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.gloria.GameKids.R;
 
-public class Vedios extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

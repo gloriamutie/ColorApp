@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,11 +27,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class signup_details extends BaseActivity implements View.OnClickListener {
+    public Context context;
+
     private static final String TAG = "EmailPassword";
     private ActivitySignupDetailsBinding mBinding;
 
     //    declaring auth
     private FirebaseAuth mAuth;
+
+    public static Intent createIntent( Context context) {
+        return new Intent(context, play_list.class);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -175,20 +182,17 @@ public class signup_details extends BaseActivity implements View.OnClickListener
 
 //    get currently signed in user
     private void reload() {
-        mAuth.getCurrentUser().reload().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    updateUI(mAuth.getCurrentUser());
-                    Toast.makeText(signup_details.this,
-                            "Reload successful!",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    Log.e(TAG, "reload", task.getException());
-                    Toast.makeText(signup_details.this,
-                            "Failed to reload user.",
-                            Toast.LENGTH_SHORT).show();
-                }
+        mAuth.getCurrentUser().reload().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                updateUI(mAuth.getCurrentUser());
+                Toast.makeText(signup_details.this,
+                        "Reload successful!",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                Log.e(TAG, "reload", task.getException());
+                Toast.makeText(signup_details.this,
+                        "Failed to reload user.",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -266,6 +270,8 @@ public class signup_details extends BaseActivity implements View.OnClickListener
         } else if (i == R.id.reloadButton) {
             reload();
         }
+
+
     }
 
 

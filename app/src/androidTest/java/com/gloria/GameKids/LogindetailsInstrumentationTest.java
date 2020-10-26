@@ -7,7 +7,7 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
-import com.gloria.GameKids.ui.login_details;
+import com.gloria.GameKids.ui.Register;
 
 import org.junit.Rule;
 import org.junit.runner.RunWith;
@@ -17,8 +17,8 @@ import static org.hamcrest.Matchers.not;
 @RunWith(AndroidJUnit4.class)
 public class LogindetailsInstrumentationTest {
     @Rule
-    public ActivityTestRule<login_details> activityTestRule =
-            new ActivityTestRule<>(login_details.class);
+    public ActivityTestRule<Register> activityTestRule =
+            new ActivityTestRule<>(Register.class);
 
     public void testLoginAttempt() {
         Espresso.onView(ViewMatchers.withId(R.id.textView)).perform(ViewActions.clearText()).perform(ViewActions.typeText("mwongeliglo15@gmail.com"));

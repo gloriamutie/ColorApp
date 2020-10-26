@@ -195,7 +195,8 @@ public class MultiFactorActivity extends BaseActivity implements View.OnClickLis
         } else if (i == R.id.unenrollMfa) {
             startActivity(new Intent(this, MultiFactorUnenrollActivity.class));
         } else if (i == R.id.reloadButton) {
-            reload();
+            Intent intent = new Intent(MultiFactorActivity.this, signup_details.class);
+            startActivity(intent);
         }
     }
 
