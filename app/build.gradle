@@ -65,6 +65,9 @@ dependencies {
     implementation 'androidx.viewpager:viewpager:1.0.0'
     implementation files('/home/gloria/AndroidStudioProjects/Gaming/app/libs/YouTubeAndroidPlayerApi.jar')
     implementation 'com.google.firebase:firebase-auth:19.4.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-firestore:21.7.1'
+    implementation 'com.google.firebase:firebase-database:19.5.1'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

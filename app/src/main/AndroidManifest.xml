@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".ui.VerifyPhone"></activity>
+        <activity android:name=".ui.Register"></activity>
+        <activity android:name=".ui.EditProfile" />
+        <activity android:name=".ui.Login" />
         <activity android:name=".ui.BaseActivity" />
         <activity android:name=".ui.MultiFactorSignInActivity" />
         <activity android:name=".ui.MultiFactorUnenrollActivity" />
