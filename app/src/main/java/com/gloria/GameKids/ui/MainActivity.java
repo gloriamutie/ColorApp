@@ -34,12 +34,12 @@ import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
     private static final int GALLERY_INTENT_CODE = 1023 ;
-    TextView fullName,email,phone,verifyMsg;
+    TextView fullName,email,phone,verifyMsg,playlists;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
     Button resendCode;
-    Button resetPassLocal,changeProfileImage,playlists;
+    Button resetPassLocal,changeProfileImage;
     FirebaseUser user;
     ImageView profileImage;
     StorageReference storageReference;
@@ -151,6 +151,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        playlists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(),play_list.class);
+//                startActivity();
+            }
+        });
+
+
         changeProfileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,11 +173,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    public void logout(View view) {
-//        FirebaseAuth.getInstance().signOut();//logout
-//        startActivity(new Intent(getApplicationContext(),play_list.class));
-//        finish();
-//    }
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();//logout
+        startActivity(new Intent(getApplicationContext(),Login.class));
+        finish();
+    }
 
    void checkifUserLoginedIn(){
         currentUser = fAuth.getCurrentUser();
