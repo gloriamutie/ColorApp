@@ -27,22 +27,18 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DetailsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class DetailsFragment extends Fragment {
-    @BindView(R.id.youtube_player_view)
-    YouTubePlayerView youTubePlayerView;
+    @BindView(R.id.youtube_player_view) YouTubePlayerView youTubePlayerView;
     @BindView(R.id.gameNameTextView) TextView mGameNameTextView;
     @BindView(R.id.vediodescription) TextView mGameNameTextView2;
-    @BindView(R.id.ratingTextView) TextView mRatingTextView;
+
 
     private Item mitems;
 
     public DetailsFragment(){
         // Required empty public constructor
+
     }
 
     public static DetailsFragment newInstance(Item items) {

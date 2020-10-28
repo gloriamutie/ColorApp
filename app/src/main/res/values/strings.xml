@@ -122,6 +122,7 @@
     <string name="your_name">Your Name</string>
     <string name="your_email_address">Your Email Address</string>
     <string name="save">Save</string>
+    <string name="playlists">PlayLists</string>
 
 
 </resources>

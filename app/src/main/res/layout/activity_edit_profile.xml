@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ui.EditProfile">
+    android:background="@drawable/water1"
+    tools:context=".ui.EditProfile">
 
     <EditText
         android:id="@+id/profileFullName"
@@ -16,6 +17,8 @@
         android:ems="10"
         android:hint="Your Name"
         android:inputType="textPersonName"
+        android:textColor="#FFE600"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileImageView" />
@@ -40,6 +43,7 @@
         android:ems="10"
         android:hint="Your Email Address"
         android:inputType="textEmailAddress"
+        android:textColor="#FFE600"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileFullName" />
@@ -53,6 +57,7 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="phone"
+        android:textColor="#FFE600"
         android:hint="Phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="#C8C80B"
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

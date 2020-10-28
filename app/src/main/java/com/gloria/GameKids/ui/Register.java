@@ -113,7 +113,7 @@ public class Register extends AppCompatActivity {
 
                             userID = fAuth.getCurrentUser().getUid();
 
-//                            create a collection of data using hasmap and .put()
+//                            create a collection of data using hashmap and .put()
                             DocumentReference documentReference = fStore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
                             user.put("fName",fullName);
@@ -133,7 +133,7 @@ public class Register extends AppCompatActivity {
                                     Log.d(TAG, "onFailure: " + e.toString());
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                         }else {
                             Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

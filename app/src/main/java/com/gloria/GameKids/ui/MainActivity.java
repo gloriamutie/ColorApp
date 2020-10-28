@@ -1,12 +1,5 @@
 package com.gloria.GameKids.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -19,11 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gloria.GameKids.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -35,48 +30,41 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import javax.annotation.Nullable;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int GALLERY_INTENT_CODE = 1023;
+    private static final int GALLERY_INTENT_CODE = 1023 ;
     TextView fullName,email,phone,verifyMsg;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
     Button resendCode;
-    Button resetPassLocal,changeProfileImage;
+    Button resetPassLocal,changeProfileImage,playlists;
     FirebaseUser user;
     ImageView profileImage;
     StorageReference storageReference;
+    private FirebaseUser currentUser;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fAuth = FirebaseAuth.getInstance();
+        checkifUserLoginedIn();
         setContentView(R.layout.activity_main);
         phone = findViewById(R.id.profilePhone);
         fullName = findViewById(R.id.profileName);
         email    = findViewById(R.id.profileEmail);
         resetPassLocal = findViewById(R.id.resetPasswordLocal);
+        playlists = findViewById(R.id.playlists);
+
+
+
+        fStore = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);
-
-
-        fAuth = FirebaseAuth.getInstance();
-        fStore = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
-        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
-        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-
-            @Override
-            public void onSuccess(Uri uri) {
-                Picasso.get().load(uri).into(profileImage);
-            }
-        });
 
         resendCode = findViewById(R.id.resendCode);
         verifyMsg = findViewById(R.id.verifyMsg);
@@ -108,21 +96,15 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
-
-
         DocumentReference documentReference = fStore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                if(documentSnapshot.exists()){
-                    phone.setText(documentSnapshot.getString("phone"));
-                    fullName.setText(documentSnapshot.getString("fName"));
-                    email.setText(documentSnapshot.getString("email"));
+        documentReference.addSnapshotListener(this, (documentSnapshot, e) -> {
+            if(documentSnapshot.exists()){
+                phone.setText(documentSnapshot.getString("phone"));
+                fullName.setText(documentSnapshot.getString("fName"));
+                email.setText(documentSnapshot.getString("email"));
 
-                }else {
-                    Log.d("tag", "onEvent: Document do not exists");
-                }
+            }else {
+                Log.d("tag", "onEvent: Document do not exists");
             }
         });
 
@@ -178,20 +160,32 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("email",email.getText().toString());
                 i.putExtra("phone",phone.getText().toString());
                 startActivity(i);
-//
-
             }
         });
-
-
     }
 
+//    public void logout(View view) {
+//        FirebaseAuth.getInstance().signOut();//logout
+//        startActivity(new Intent(getApplicationContext(),play_list.class));
+//        finish();
+//    }
 
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();//logout
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        finish();
+   void checkifUserLoginedIn(){
+        currentUser = fAuth.getCurrentUser();
+        if(currentUser==null){
+            startActivity(new Intent(this,Login.class));
+
+        }
     }
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        StorageReference profileRef = storageReference.child("users/"+fAuth.getCurrentUser().getUid()+"/profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileImage);
+            }
+        });
+    }
 }
