@@ -153,10 +153,12 @@ public class MainActivity extends AppCompatActivity {
 
         playlists.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(),play_list.class);
-//                startActivity();
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),play_list.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, "welcome", Toast.LENGTH_LONG).show();
             }
+
         });
 
 
