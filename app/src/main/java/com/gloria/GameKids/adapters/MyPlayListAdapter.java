@@ -61,7 +61,7 @@ public class MyPlayListAdapter  extends RecyclerView.Adapter<MyPlayListAdapter.P
         @BindView(R.id.myImageView) ImageView mMyImageView;
         @BindView(R.id.gameNameTextView) TextView mGameNameTextView;
         @BindView(R.id.gameNameTextView2) TextView mGameNameTextView2;
-        @BindView(R.id.ratingTextView) TextView mRatingTextView;
+//        @BindView(R.id.authorTextView) TextView mAuthorTextView;
 
         private Context mContext;
 
@@ -82,9 +82,11 @@ public class MyPlayListAdapter  extends RecyclerView.Adapter<MyPlayListAdapter.P
 
         }
         public void bindPlaylist(Item items) {
-            Picasso.get().load(items.getSnippet().getThumbnails().getDefault().getUrl());
-            mGameNameTextView.setText(items.getSnippet().getTitle());
-            mGameNameTextView2.setText(items.getSnippet().getDescription());
+
+            Picasso.get().load(items.getSnippet().getThumbnails().getHigh().getUrl()).into(mMyImageView);
+            mGameNameTextView.setText(items.getSnippet().getChannelTitle());
+            mGameNameTextView2.setText(items.getSnippet().getThumbnails().getDefault().getUrl());
+//            mAuthorTextView.setText(items.getSnippet().getPublishedAt());
         }
     }
 }

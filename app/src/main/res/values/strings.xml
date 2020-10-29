@@ -123,6 +123,7 @@
     <string name="your_email_address">Your Email Address</string>
     <string name="save">Save</string>
     <string name="playlists">PlayLists</string>
+    <string name="todo">TODO</string>
 
 
 </resources>

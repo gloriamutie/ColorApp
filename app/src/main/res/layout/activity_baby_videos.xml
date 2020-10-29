@@ -1,64 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="@dimen/cardview_default_elevation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#243A30"
     app:cardCornerRadius="@dimen/cardview_default_radius"
-    android:layout_height="wrap_content">
+    app:cardElevation="@dimen/cardview_default_elevation">
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:padding="20px"
-        android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="130dp"
-        android:layout_height="100dp"
-        android:id="@+id/myImageView"
-        android:src="@drawable/gamelist"
-        android:scaleType="centerCrop"/>
+        android:orientation="horizontal"
+        android:padding="20dp">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gamelist" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/gameNameTextView"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="@string/vedios_to_watch"
-            android:maxLength="100"
-            android:textColor="@color/colorPrimary"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/vdio_description"
-            android:id="@+id/gameNameTextView2"
-            android:layout_below="@+id/gameNameTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#D5C6C6"
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
+                android:id="@+id/gameNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="author"
-                android:id="@+id/ratingTextView"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/colorAccent"/>
-        </RelativeLayout>
-    </LinearLayout>
+                android:maxLength="100"
+                android:text="@string/vedios_to_watch"
+                android:textColor="#05956C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gameNameTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vdio_description"
+                android:textColor="#CC6290"
+                android:textStyle="italic" />
+
+            <!--            <RelativeLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content">-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/authorTextView"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_alignParentRight="true"-->
+            <!--                    android:text="author"-->
+            <!--                    android:textColor="@color/colorAccent" />-->
+            <!--            </RelativeLayout>-->
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

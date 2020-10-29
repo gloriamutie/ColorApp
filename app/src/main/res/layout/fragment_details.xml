@@ -31,30 +31,24 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
+                android:layout_marginStart="9dp"
+                android:layout_marginLeft="9dp"
+                android:maxLength="200"
                 android:text="Vedio Name"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-                android:maxLength="200"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/ratingTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/gameNameTextView"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="4.5/5"
-                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/vediodescription"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/gameNameTextView"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="11dp"
                 android:text="Brunch, American"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="italic" />
@@ -66,53 +60,18 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="383dp"
+                android:layout_height="80dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="81dp"
                 android:orientation="vertical"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
-
-                <TextView
-                    android:id="@+id/websiteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:drawableLeft="@android:drawable/ic_menu_slideshow"
-                    android:drawablePadding="4dp"
-                    android:gravity="center"
-                    android:text="View on Yelp"
-                    android:textColor="@color/design_default_color_on_secondary"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/phoneTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawableLeft="@android:drawable/ic_media_play"
-                    android:drawablePadding="4dp"
-                    android:gravity="center"
-                    android:text="replay"
-                    android:textColor="@color/design_default_color_surface"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/addressTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawableLeft="@android:drawable/ic_media_ff"
-                    android:drawablePadding="4dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/saveVediosButton"

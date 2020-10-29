@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,9 @@ import com.squareup.picasso.Picasso;
 //import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
+
     private static final int GALLERY_INTENT_CODE = 1023 ;
+
     TextView fullName,email,phone,verifyMsg,playlists;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView profileImage;
     StorageReference storageReference;
     private FirebaseUser currentUser;
+    private Uri videoUri;
+    MediaController mediaController;
 
 
     @Override
@@ -62,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
 
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);

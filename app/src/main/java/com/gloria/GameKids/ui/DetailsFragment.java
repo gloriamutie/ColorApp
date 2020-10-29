@@ -59,11 +59,11 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_details,container,false);
         ButterKnife.bind(this, view);
-//put categories here
-//        Picasso.get().load(mitems.getSnippet().getThumbnails().getDefault().getUrl()).into(mMyImageView);
+
+//       Picasso.get().load(mitems.getSnippet().getThumbnails().getDefault().getUrl()).into(mMyImageView);
 
         mGameNameTextView.setText(mitems.getSnippet().getTitle());
-        mGameNameTextView2.setText(mitems.getSnippet().getDescription());
+        mGameNameTextView2.setText(mitems.getSnippet().getPublishedAt());
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {

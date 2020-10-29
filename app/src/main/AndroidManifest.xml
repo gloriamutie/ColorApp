@@ -15,19 +15,19 @@
         tools:ignore="ExtraText">
         <activity android:name=".ui.Register"></activity>
         <activity android:name=".ui.EditProfile" />
-        <activity android:name=".ui.Login" />
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.BaseActivity" />
         <activity android:name=".ui.MultiFactorSignInActivity" />
         <activity android:name=".ui.MultiFactorUnenrollActivity" />
         <activity android:name=".ui.MultiFactorEnrollActivity" />
         <activity android:name=".ui.MultiFactorActivity" />
         <activity android:name=".ui.DetailsActivity" />
-        <activity android:name=".ui.vedios" />
-        <activity android:name=".BabyVideos" />
+<!--        <activity android:name=".ui.vedios" />-->
+<!--        <activity android:name=".BabyVideos" />-->
         <activity android:name=".ui.play_list" />
         <activity android:name=".ui.signup_details" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.Login"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
