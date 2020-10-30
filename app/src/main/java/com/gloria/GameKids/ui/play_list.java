@@ -19,6 +19,7 @@ import com.gloria.GameKids.models.Item;
 import com.gloria.GameKids.models.YoutubeGameSearchResponse;
 import com.gloria.GameKids.network.YoutubeApi;
 import com.gloria.GameKids.network.YoutubeClient;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ import retrofit2.Response;
 
 public class play_list extends AppCompatActivity {
     public static final String TAG= play_list.class.getSimpleName();
+    private DatabaseReference mSavedvedios;
 //    private ListView mListView;
 //    @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
