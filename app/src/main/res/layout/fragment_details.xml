@@ -60,8 +60,8 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="383dp"
-                android:layout_height="80dp"
+                android:layout_width="399dp"
+                android:layout_height="172dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -82,7 +82,16 @@
                     android:text="Save Videos"
                     android:textColor="@color/common_google_signin_btn_text_light_focused"
                     android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/firebaseVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SAVED VIDEOS" />
+
+
             </LinearLayout>
+
         </RelativeLayout>
     </LinearLayout>
 </FrameLayout>

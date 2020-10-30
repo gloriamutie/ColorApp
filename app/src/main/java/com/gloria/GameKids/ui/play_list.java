@@ -31,7 +31,9 @@ import retrofit2.Response;
 
 public class play_list extends AppCompatActivity {
     public static final String TAG= play_list.class.getSimpleName();
+
     private DatabaseReference mSavedvedios;
+
 //    private ListView mListView;
 //    @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -55,6 +57,8 @@ public class play_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
         ButterKnife.bind(this);
+
+
 //     mListView = (ListView) findViewById(R.id.listView);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, gamelist);
 //        MyPlayListAdapter adapter = new MyPlayListAdapter(this, android.R.layout.simple_list_item_1, ); // must match constructor!
