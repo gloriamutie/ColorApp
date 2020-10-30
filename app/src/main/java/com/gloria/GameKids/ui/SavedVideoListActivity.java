@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +18,22 @@ import com.gloria.GameKids.Constants;
 import com.gloria.GameKids.R;
 import com.gloria.GameKids.adapters.FirebaseVideosViewHolder;
 import com.gloria.GameKids.models.Item;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SavedVideoListActivity extends AppCompatActivity {
+    private static final String TAG = "saved videos";
     private DatabaseReference mVediosReference;
     private FirebaseRecyclerAdapter<Item, FirebaseVideosViewHolder> mFirebaseAdapter;
+    private String userId;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
@@ -39,8 +47,30 @@ public class SavedVideoListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mVediosReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_SAVED_VIDEOS);
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         setUpFirebaseAdapter();
+        fetchv();
 
+
+    }
+
+    private void fetchv() {
+        DatabaseReference videos = mVediosReference.child(userId);
+        videos.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for(DataSnapshot each: snapshot.getChildren()){
+                        each.getKey();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void setUpFirebaseAdapter() {
@@ -48,6 +78,7 @@ public class SavedVideoListActivity extends AppCompatActivity {
         FirebaseRecyclerOptions<Item> options = new FirebaseRecyclerOptions.Builder<Item>()
                 .setQuery(mVediosReference, Item.class)
                 .build();
+        Log.i(TAG, options.toString());
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Item, FirebaseVideosViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseVideosViewHolder firebaseVideosViewHolder, int i, @NonNull Item item) {
