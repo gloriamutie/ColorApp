@@ -4,7 +4,8 @@ package com.gloria.GameKids.models;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+import org.parceler.Parcel;
+@Parcel
 public class YoutubeGameSearchResponse {
 
     @SerializedName("kind")
@@ -16,12 +17,12 @@ public class YoutubeGameSearchResponse {
     @SerializedName("nextPageToken")
     @Expose
     private String nextPageToken;
-    @SerializedName("pageInfo")
-    @Expose
-    private PageInfo pageInfo;
     @SerializedName("items")
     @Expose
     private List<Item> items = null;
+    @SerializedName("pageInfo")
+    @Expose
+    private PageInfo pageInfo;
 
     /**
      * No args constructor for use in serialization
@@ -38,13 +39,13 @@ public class YoutubeGameSearchResponse {
      * @param etag
      * @param items
      */
-    public YoutubeGameSearchResponse(String kind, String etag, String nextPageToken, PageInfo pageInfo, List<Item> items) {
+    public YoutubeGameSearchResponse(String kind, String etag, String nextPageToken, List<Item> items, PageInfo pageInfo) {
         super();
         this.kind = kind;
         this.etag = etag;
         this.nextPageToken = nextPageToken;
-        this.pageInfo = pageInfo;
         this.items = items;
+        this.pageInfo = pageInfo;
     }
 
     public String getKind() {
@@ -71,20 +72,20 @@ public class YoutubeGameSearchResponse {
         this.nextPageToken = nextPageToken;
     }
 
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
     public List<Item> getItems() {
         return items;
     }
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
     }
 
 }

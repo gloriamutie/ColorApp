@@ -4,6 +4,9 @@ package com.gloria.GameKids.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Snippet {
 
     @SerializedName("publishedAt")
@@ -24,9 +27,15 @@ public class Snippet {
     @SerializedName("channelTitle")
     @Expose
     private String channelTitle;
-    @SerializedName("localized")
+    @SerializedName("playlistId")
     @Expose
-    private Localized localized;
+    private String playlistId;
+    @SerializedName("position")
+    @Expose
+    private Integer position;
+    @SerializedName("resourceId")
+    @Expose
+    private ResourceId resourceId;
 
     /**
      * No args constructor for use in serialization
@@ -37,15 +46,17 @@ public class Snippet {
 
     /**
      * 
+     * @param playlistId
+     * @param resourceId
      * @param publishedAt
-     * @param localized
      * @param description
+     * @param position
      * @param title
      * @param thumbnails
      * @param channelId
      * @param channelTitle
      */
-    public Snippet(String publishedAt, String channelId, String title, String description, Thumbnails thumbnails, String channelTitle, Localized localized) {
+    public Snippet(String publishedAt, String channelId, String title, String description, Thumbnails thumbnails, String channelTitle, String playlistId, Integer position, ResourceId resourceId) {
         super();
         this.publishedAt = publishedAt;
         this.channelId = channelId;
@@ -53,7 +64,9 @@ public class Snippet {
         this.description = description;
         this.thumbnails = thumbnails;
         this.channelTitle = channelTitle;
-        this.localized = localized;
+        this.playlistId = playlistId;
+        this.position = position;
+        this.resourceId = resourceId;
     }
 
     public String getPublishedAt() {
@@ -104,12 +117,28 @@ public class Snippet {
         this.channelTitle = channelTitle;
     }
 
-    public Localized getLocalized() {
-        return localized;
+    public String getPlaylistId() {
+        return playlistId;
     }
 
-    public void setLocalized(Localized localized) {
-        this.localized = localized;
+    public void setPlaylistId(String playlistId) {
+        this.playlistId = playlistId;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
+    public ResourceId getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(ResourceId resourceId) {
+        this.resourceId = resourceId;
     }
 
 }

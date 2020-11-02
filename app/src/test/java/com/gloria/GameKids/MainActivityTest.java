@@ -3,6 +3,8 @@ package com.gloria.GameKids;
 import android.content.Intent;
 
 
+import com.gloria.GameKids.ui.MainActivity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

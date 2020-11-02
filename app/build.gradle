@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 
 android {
     packagingOptions {
@@ -15,7 +15,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.gloria.gaming"
+        applicationId "com.gloria.GameKids.ui"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -30,6 +30,9 @@ android {
         it.buildConfigField 'String', 'YOUTUBE_API_KEY', YoutubeApiKey
     }
 
+    buildFeatures {
+        viewBinding true
+    }
 
     buildTypes {
         release {
@@ -47,8 +50,19 @@ android {
 }
 
 dependencies {
+    //
 
+    //
+    implementation 'com.google.firebase:firebase-firestore:17.0.4'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.firebaseui:firebase-ui-firestore:4.1.0'
+    //
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+//    compile 'com.daimajia.slider:library:1.1.5@aar'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -57,6 +71,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation files('/home/gloria/AndroidStudioProjects/Gaming/app/libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
+    implementation 'com.google.firebase:firebase-storage:19.2.0'
+    implementation 'com.google.firebase:firebase-firestore:21.7.1'
+    implementation 'com.google.firebase:firebase-database:19.5.1'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -69,6 +88,11 @@ dependencies {
     testImplementation "org.robolectric:robolectric:3.8"
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'pub.devrel:easypermissions:0.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.23'
+
 //    implementation('com.google.api-client:google-api-client-android:1.22.0') {
 //        exclude group: 'org.apache.httpcomponents'
         implementation 'com.google.api-client:google-api-client:1.30.10'

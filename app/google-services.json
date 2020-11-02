@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "231149685155",
+    "firebase_url": "https://gaming-292419.firebaseio.com",
+    "project_id": "gaming-292419",
+    "storage_bucket": "gaming-292419.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231149685155:android:b95161c16ea64416d07216",
+        "android_client_info": {
+          "package_name": "com.gloria.GameKids.ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231149685155-3hva2cb1asrir70kcf9dg0e6ao4ck5ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5z13l-zVrxM2BwJ9IMzh71d0uOWlu6ME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231149685155-3hva2cb1asrir70kcf9dg0e6ao4ck5ju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

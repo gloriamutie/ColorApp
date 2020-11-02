@@ -2,6 +2,8 @@ package com.gloria.GameKids;
 
 import android.content.Intent;
 
+import com.gloria.GameKids.ui.signup_details;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
