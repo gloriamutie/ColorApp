@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gloria.GameKids.R;
+import com.gloria.GameKids.Saved;
 import com.gloria.GameKids.models.Item;
 import com.gloria.GameKids.models.SavedVideos;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -78,7 +79,8 @@ public class DetailsFragment extends Fragment  {
         mFirebaseVideos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(),SavedVideoListActivity.class));
+//                startActivity(new Intent(getContext(),SavedVideoListActivity.class));
+                startActivity(new Intent(getContext(), Saved.class));
 //                startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });

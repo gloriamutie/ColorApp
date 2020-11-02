@@ -24,21 +24,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SavedVideoListActivity extends AppCompatActivity {
     private static final String TAG = "saved videos";
-    private DatabaseReference mVediosReference;
+    private DatabaseReference mVideosReference;
     private FirebaseRecyclerAdapter<Item, FirebaseVideosViewHolder> mFirebaseAdapter;
     private String userId;
 
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +43,16 @@ public class SavedVideoListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_list);
         ButterKnife.bind(this);
 
-        mVediosReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_SAVED_VIDEOS);
+        mVideosReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_SAVED_VIDEOS);
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         setUpFirebaseAdapter();
-        fetchv();
+        fetch();
 
 
     }
 
-    private void fetchv() {
-        DatabaseReference videos = mVediosReference.child(userId);
+    private void fetch() {
+        DatabaseReference videos = mVideosReference.child(userId);
         videos.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -76,14 +73,14 @@ public class SavedVideoListActivity extends AppCompatActivity {
     private void setUpFirebaseAdapter() {
 
         FirebaseRecyclerOptions<Item> options = new FirebaseRecyclerOptions.Builder<Item>()
-                .setQuery(mVediosReference, Item.class)
+                .setQuery(mVideosReference, Item.class)
                 .build();
         Log.i(TAG, options.toString());
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Item, FirebaseVideosViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseVideosViewHolder firebaseVideosViewHolder, int i, @NonNull Item item) {
-        progressBar.setVisibility(View.INVISIBLE);
-                mRecyclerView.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.INVISIBLE);
+//                mRecyclerView.setVisibility(View.VISIBLE);
 
             }
 
@@ -97,6 +94,8 @@ public class SavedVideoListActivity extends AppCompatActivity {
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);
+        progressBar.setVisibility(View.GONE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 
     @Override

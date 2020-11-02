@@ -8,7 +8,9 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Item {
-
+    //
+    private String mUid;
+    //
     @SerializedName("kind")
     @Expose
     private String kind;
@@ -21,6 +23,8 @@ public class Item {
     @SerializedName("snippet")
     @Expose
     private Snippet snippet;
+    @Expose
+    private String videoId;
 
     /**
      * No args constructor for use in serialization
@@ -36,12 +40,30 @@ public class Item {
      * @param etag
      * @param id
      */
-    public Item(String kind, String etag, String id, Snippet snippet) {
+    public Item(String kind, String etag, String id, Snippet snippet, String uid,String videoId) {
         super();
         this.kind = kind;
         this.etag = etag;
         this.id = id;
         this.snippet = snippet;
+        this.mUid = uid;
+        this.videoId=videoId;
+    }
+
+    public String getmUid() {
+        return mUid;
+    }
+
+    public String getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
+    }
+
+    public void setmUid(String mUid) {
+        this.mUid = mUid;
     }
 
     public String getKind() {

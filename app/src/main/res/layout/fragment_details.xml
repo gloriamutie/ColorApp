@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="#070006"
         android:orientation="vertical">
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
@@ -19,7 +19,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:startColor="#008000"
             android:paddingLeft="10dp"
             android:paddingTop="20dp"
             android:paddingRight="10dp"
@@ -35,7 +35,7 @@
                 android:layout_marginLeft="9dp"
                 android:maxLength="200"
                 android:text="Vedio Name"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="#008000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="11dp"
                 android:text="Brunch, American"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#F5F6B104"
                 android:textStyle="italic" />
 
         </RelativeLayout>
@@ -78,15 +78,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:background="@color/colorAccent"
+                    android:background="@drawable/rounded_corner"
                     android:text="Save Videos"
-                    android:textColor="@color/common_google_signin_btn_text_light_focused"
-                    android:textSize="15sp" />
+                    android:textColor="#90050505"
+                    android:textColorHighlight="#008000"
+                    android:layout_margin="4dp"
+                    android:typeface="normal" />
 
                 <Button
                     android:id="@+id/firebaseVideos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_margin="4dp"
                     android:text="SAVED VIDEOS" />
 
 
